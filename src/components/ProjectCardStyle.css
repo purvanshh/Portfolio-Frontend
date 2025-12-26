@@ -66,8 +66,44 @@
 .project-img  img {
     border-radius: 18px;
     max-width: 500px;
-    width: fit-content;
     height: auto;
+}
+
+.project-img a {
+    position: relative;
+    display: block;
+}
+
+.img-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.project-img:hover .img-overlay {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px);
+}
+
+@media (hover: none) {
+    .img-overlay {
+        opacity: 1;
+        bottom: 15px;
+    }
 }
 
 /* Styling for mobile app screenshots (portrait orientation) */

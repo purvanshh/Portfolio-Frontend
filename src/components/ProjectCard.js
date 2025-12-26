@@ -17,7 +17,10 @@ export default function ProjectCard(props) {
           <button className='btn' onClick={handleOnClick}><span>View on<FiGithub className="social" size={20} style={{ marginLeft: "8px", position: "relative", top: "2px", strokeWidth: "3" }} /></span><FaArrowRight className='btn-arrow' size={22} style={{ marginLeft: "1rem" }} /></button>
         </div>
         <Tilt className={`project-img ${props.isMobileApp ? 'mobile-app-img' : ''}`} gyroscope={true} >
-          <a href={props.deployedProjectLink} target="_blank" rel="noopener noreferrer"><img src={props.projectImg} alt="Displaying Project" /></a>
+          <a href={props.deployedProjectLink} target="_blank" rel="noopener noreferrer">
+            <img src={props.projectImg} alt="Displaying Project" />
+            <span className="img-overlay">Click for Live Demo</span>
+          </a>
         </Tilt>
 
       </div>
