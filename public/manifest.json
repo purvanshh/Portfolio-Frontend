@@ -1,0 +1,8 @@
+{
+  "short_name": "Purvansh Sahu",
+  "name": "Portfolio website of Purvansh Sahu",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

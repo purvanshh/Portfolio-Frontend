@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --bg: #000000;
+  --text: rgba(255, 255, 255, 0.95);
+  --muted-text: rgba(255, 255, 255, 0.8);
+  --accent: #F94892;
+  --muted-border: rgba(255, 255, 255, 0.12);
+  --input-border: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --text: rgba(0, 0, 0, 0.9);
+  --muted-text: rgba(0, 0, 0, 0.75);
+  --accent: #F94892;
+  --muted-border: rgba(0, 0, 0, 0.08);
+  --input-border: rgba(0, 0, 0, 0.65);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: var(--muted-text);
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Spline 3D Background */
+.spline-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: auto;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.spline-background.fade-in {
+  opacity: 1;
+}
+
+.spline-background spline-viewer {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Make main content visible over background */
+.main-content {
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+  /* Allow mouse events to pass through to Spline */
+}
+
+/* Re-enable pointer events on all interactive elements */
+.main-content a,
+.main-content button,
+.main-content input,
+.main-content textarea,
+.main-content select,
+.main-content img,
+.main-content .btn,
+.main-content nav,
+.main-content [onclick],
+.main-content [role="button"] {
+  pointer-events: auto;
+}
+
+::-webkit-scrollbar {
+
+  display: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--accent);
+  width: fit-content;
+  padding: 15px 25px;
+  color: var(--text);
+  font-size: 20px;
+  border-radius: 10px;
+  position: relative;
+  bottom: 0;
+  margin-top: 50px;
+  transition: all 0.35s ease-out;
+  background-color: transparent;
+}
+
+.btn:hover {
+  background-color: var(--accent);
+  bottom: 12px;
+  box-shadow: 0 0 20px 1px rgba(205, 106, 139, 0.25);
+}
+
+.btn:active {
+  background-color: rgba(141, 33, 78, 0.9);
+}
+
+@media screen and (max-width: 750px) {
+  .btn {
+    font-size: 16px;
+  }
+}
