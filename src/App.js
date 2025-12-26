@@ -42,6 +42,15 @@ function App() {
         <ProjectCard
           id="project"
           className="even"
+          projectTitle="ARKO - Luxury Real Estate & Architecture"
+          projectDesc="A premium, modern real estate website showcasing luxury properties with elegant design and smooth animations."
+          projectLink="https://github.com/purvanshh/real-estate"
+          deployedProjectLink="https://real-estate-pied-ten.vercel.app/"
+          projectImg={require('./images/Real_Estate.jpeg')}
+        />
+
+        <ProjectCard
+          className="odd"
           projectTitle="Artisan Bakery"
           projectDesc="A premium, modern landing page for an artisan bakery featuring stunning 3D Three.js visuals with floating bread animation, GSAP-powered smooth scroll animations, gooey text morphing effects, and a responsive design with a warm, elegant aesthetic."
           projectLink="https://github.com/purvanshh/bakery-landing"
@@ -50,7 +59,7 @@ function App() {
         />
 
         <ProjectCard
-          className="odd"
+          className="even"
           projectTitle="Épicurien"
           projectDesc="A luxury fine dining landing page featuring 3D Three.js floating golden chalice, 36 animated SVG background paths with Framer Motion, GSAP ScrollTrigger reveals, and a sophisticated gold-on-charcoal design system with premium typography."
           projectLink="https://github.com/purvanshh/restaurant-landing"
@@ -59,7 +68,7 @@ function App() {
         />
 
         <ProjectCard
-          className="even"
+          className="odd"
           projectTitle="BrainWave"
           projectDesc="Modern UI/UX showcase implementing responsive layouts, smooth animations, and clean component structure. Built as a design-focused project to explore modern frontend patterns and visual polish."
           projectLink="https://github.com/purvanshh/BrainWave"
