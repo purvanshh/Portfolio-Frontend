@@ -8,10 +8,24 @@ import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 import AnimatedCursor from "react-animated-cursor";
 import SplineErrorBoundary from "./components/SplineErrorBoundary";
+import SmokeyCursor from "./components/ui/SmokeyCursor";
 
 function App() {
   return (
     <>
+      {/* Smokey Cursor Effect */}
+      <SmokeyCursor
+        simulationResolution={128}
+        dyeResolution={1024}
+        densityDissipation={3}
+        velocityDissipation={2}
+        curl={5}
+        splatRadius={0.25}
+        splatForce={6000}
+        enableShading={true}
+        colorUpdateSpeed={10}
+      />
+
       {/* 3D Background */}
       <SplineErrorBoundary>
         <div className="spline-background fade-in" style={{ opacity: 1 }}>
