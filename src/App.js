@@ -73,7 +73,7 @@ function App() {
               description: "Step into the world of exclusivity with ARKO, a high-end real estate and architecture platform. Crafted to convey pure elegance, it features immersive full-bleed layouts, sophisticated GSAP scroll transitions, and a minimal luxury color system. Every micro-interaction is designed to tell a story of spatial beauty and premium living.",
               link: "https://github.com/purvanshh/real-estate",
               demoLink: "https://real-estate-pied-ten.vercel.app/",
-              image: require("./images/Real_Estate.jpeg")
+              image: require("./images/Restaurant_landing.png")
             },
             {
               title: "Artisan Bakery",
