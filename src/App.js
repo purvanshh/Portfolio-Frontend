@@ -63,35 +63,35 @@ function App() {
           features={[
             {
               title: "Dental Wellness",
-              description: "A premium dental clinic landing page featuring a floating 3D tooth model, glassmorphism UI elements, and smooth GSAP-powered scroll animations. Designed with a refined teal–white color palette to showcase treatments, patient testimonials, and doctor profiles.",
+              description: "Experience a new standard in dental care with this premium landing page. Featuring a mesmerizing floating 3D tooth model, glassmorphism UI elements, and fluid GSAP-powered scroll animations, this site is designed to captivate. The refined teal–white color palette exudes professionalism, perfectly showcasing treatments, patient stories, and doctor profiles.",
               link: "https://github.com/purvanshh/dentist-landing",
               demoLink: "https://dentist-landing-brch.vercel.app/",
               image: require("./images/image.png")
             },
             {
               title: "ARKO – Luxury Real Estate",
-              description: "A high-end real estate and architecture website crafted to convey exclusivity. Features GSAP-driven smooth scroll transitions, immersive full-bleed layouts, and a minimal luxury color system.",
+              description: "Step into the world of exclusivity with ARKO, a high-end real estate and architecture platform. Crafted to convey pure elegance, it features immersive full-bleed layouts, sophisticated GSAP scroll transitions, and a minimal luxury color system. Every micro-interaction is designed to tell a story of spatial beauty and premium living.",
               link: "https://github.com/purvanshh/real-estate",
               demoLink: "https://real-estate-pied-ten.vercel.app/",
               image: require("./images/Real_Estate.jpeg")
             },
             {
               title: "Artisan Bakery",
-              description: "A modern artisan bakery landing page showcasing floating Three.js bread visuals, GSAP-powered smooth scrolling, and gooey text morphing effects. Built with a warm, elegant aesthetic.",
+              description: "Taste the craftsmanship with this modern artisan bakery site. Highlighting floating Three.js bread visuals and gooey text morphing effects, the design is as warm and inviting as fresh bread. The elegant aesthetic and smooth scrolling create a sensory digital experience that perfectly mirrors the artistry of baking.",
               link: "https://github.com/purvanshh/bakery-landing",
               demoLink: "https://bakery-landing-one.vercel.app/",
               image: require("./images/SCR-20251226-tgod.png")
             },
             {
               title: "Épicurien",
-              description: "A luxury fine-dining landing page featuring a floating Three.js golden chalice, 36 animated SVG background paths driven by Framer Motion, and GSAP ScrollTrigger reveals.",
+              description: "Indulge in luxury with Épicurien, a fine-dining experience brought to life online. Featuring a majestic floating Three.js golden chalice and 36 animated SVG background paths driven by Framer Motion, this site is a feast for the eyes. The sophisticated gold-on-charcoal design sets the stage for a cinematic culinary journey.",
               link: "https://github.com/purvanshh/restaurant-landing",
               demoLink: "https://restaurant-landing-kappa.vercel.app",
               image: require("./images/Restaurant.png")
             },
             {
               title: "BrainWave",
-              description: "A UI/UX-focused project exploring modern frontend patterns through responsive layouts, smooth animations, and clean component architecture.",
+              description: "Explore the future of interface design with BrainWave. A project dedicated to modern frontend patterns, responsive layouts, and clean component architecture. It emphasizes visual polish, precise spacing systems, and scalable design practices, serving as a benchmark for modern, high-performance web applications.",
               link: "https://github.com/purvanshh/BrainWave",
               demoLink: "https://brainwave-iota-ten.vercel.app/",
               image: require("./images/brainwave.png")

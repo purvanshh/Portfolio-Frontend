@@ -142,12 +142,14 @@ const ScrollCarousel = forwardRef(
 
                         <div className="feature-content-wrapper">
                             <div className="feature-content">
-                                <h3 className="feature-title">
-                                    {feature.title}
-                                </h3>
-                                <p className="feature-desc">
-                                    {feature.description}
-                                </p>
+                                <div className="feature-info">
+                                    <h3 className="feature-title">
+                                        {feature.title}
+                                    </h3>
+                                    <p className="feature-desc">
+                                        {feature.description}
+                                    </p>
+                                </div>
                                 <div className="feature-actions">
                                     {feature.link && (
                                         <a href={feature.link} target="_blank" rel="noreferrer" className="video-btn">
