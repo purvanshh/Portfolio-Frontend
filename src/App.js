@@ -49,7 +49,7 @@ function App() {
           fontSize: '0.9rem',
           letterSpacing: '1px'
         }}>
-          View in a laptop for the best experience
+          View in a desktop for the best experience
         </p>
       </div>
     );

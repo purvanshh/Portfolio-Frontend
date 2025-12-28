@@ -30,7 +30,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    gap: 10px 25px;
+    gap: 20px 30px;
 }
 
 .techLogo {
@@ -62,7 +62,7 @@
 }
 
 .skill-subtext {
-  font-size: 0.85rem;
-  color: #a0a0a0;
-  margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    margin-bottom: 0.75rem;
 }
