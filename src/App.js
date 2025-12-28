@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "./index.css";
 import Navbar from "./components/Navbar";
 import HomeBanner from "./components/HomeBanner";
@@ -9,8 +10,51 @@ import AnimatedCursor from "react-animated-cursor";
 import SplineErrorBoundary from "./components/SplineErrorBoundary";
 import SmokeyCursor from "./components/ui/SmokeyCursor";
 import ScrollCarousel from "./components/ui/ScrollCarousel";
+import RippleLoader from "./components/ui/RippleLoader";
+import { FaReact } from "react-icons/fa";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Wait for 2.5 seconds before showing the site
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div style={{
+        position: 'fixed',
+        inset: 0,
+        backgroundColor: 'black',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 9999
+      }}>
+        <RippleLoader
+          icon={<FaReact size="100%" />}
+          size={200}
+          duration={2}
+          logoColor="dodgerblue"
+        />
+        <p style={{
+          color: 'rgba(255,255,255,0.7)',
+          marginTop: '2rem',
+          fontFamily: 'Poppins, sans-serif',
+          fontSize: '0.9rem',
+          letterSpacing: '1px'
+        }}>
+          View in a laptop for the best experience
+        </p>
+      </div>
+    );
+  }
+
   return (
     <>
       {/* Smokey Cursor Effect */}
