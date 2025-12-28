@@ -3,66 +3,166 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 50px;
-    margin: 50px 7vw 0px 15vw;
+    padding: 80px 20px;
+    margin: 0 auto;
+    max-width: 1400px;
+    width: 100%;
 }
 
 .skill-container .skill-header {
     font-size: 50px;
     font-weight: 600;
     color: var(--text);
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    text-align: center;
 }
 
-.skill-container .skill-box {
+/* Main vertical layout */
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Each category column */
+.skill-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skill-category-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.skill-category-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+/* Horizontal row of skill tiles */
+.skill-tiles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
     width: 100%;
 }
 
-.skill-box h2 {
-    color: var(--text);
-    letter-spacing: 2px;
-    word-spacing: 3px;
-}
-
-.skill-box .skillset {
-    margin: 25px 0 50px;
+/* Individual skill tile - glassmorphic style */
+.skill-tile {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
     align-items: center;
-    gap: 20px 30px;
+    justify-content: center;
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    cursor: default;
 }
 
-.techLogo {
-    border: 1px solid var(--input-border);
-    border-radius: 15px;
-    height: 120px;
-    width: auto;
-    padding: 30px;
+.skill-tile:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
-@media screen and (max-width: 1040px),
-(max-height: 550px) {
+/* Skill icon inside the tile */
+.skill-icon {
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.3s ease;
+}
 
+.skill-tile:hover .skill-icon {
+    color: white;
+}
+
+/* Responsive adjustments - maintain 3 columns as much as possible */
+@media screen and (max-width: 900px) {
     .skill-container {
-        margin: 50px 7vw 0px 20vw;
+        padding: 60px 20px;
+    }
+
+    .skills-grid {
+        gap: 30px;
+    }
+
+    .skill-tile {
+        max-width: 140px;
+    }
+
+    .skill-icon {
+        font-size: 36px;
     }
 }
 
-@media screen and (max-width: 750px) {
-    .skill-container {
-        padding-top: 80px;
-        margin: 0 50px 0px;
+@media screen and (max-width: 700px) {
+    .skill-container .skill-header {
+        font-size: 36px;
+        margin-bottom: 40px;
     }
 
-    .techLogo {
-        height: 80px;
-        padding: 14px;
+    .skills-grid {
+        gap: 24px;
+    }
+
+    .skill-tile {
+        max-width: 100px;
+        border-radius: 12px;
+    }
+
+    .skill-icon {
+        font-size: 28px;
+    }
+
+    .skill-category-title {
+        font-size: 1.1rem;
+    }
+
+    .skill-category-description {
+        font-size: 0.8rem;
+        margin-bottom: 16px;
     }
 }
 
-.skill-subtext {
-    font-size: 0.85rem;
-    color: #a0a0a0;
-    margin-bottom: 0.75rem;
+@media screen and (max-width: 500px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .skill-tile {
+        max-width: 80px;
+        border-radius: 10px;
+    }
+
+    .skill-icon {
+        font-size: 22px;
+    }
+
+    .skill-category-title {
+        font-size: 0.95rem;
+    }
+
+    .skill-category-description {
+        font-size: 0.7rem;
+        margin-bottom: 12px;
+    }
+
+    .skill-tiles {
+        gap: 10px;
+    }
 }
