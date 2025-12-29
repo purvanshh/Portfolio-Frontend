@@ -77,18 +77,14 @@ function App() {
         </div>
       </SplineErrorBoundary>
 
-      {/* Custom Cursor */}
+      {/* Custom Cursor - only red dot (no invert / negative blend) */}
       <AnimatedCursor
-        color="#fff"
+        color="#F94892"
         innerSize={8}
-        outerSize={50}
+        outerSize={0}
         innerScale={1}
-        outerScale={2.2}
+        outerScale={1}
         outerAlpha={0}
-        outerStyle={{
-          background: "#ffffff",
-          mixBlendMode: "exclusion",
-        }}
         innerStyle={{
           backgroundColor: "#F94892",
         }}
