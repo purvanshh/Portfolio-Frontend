@@ -4,7 +4,7 @@
   --bg: #000000;
   --text: rgba(255, 255, 255, 0.95);
   --muted-text: rgba(255, 255, 255, 0.8);
-  --accent: #F94892;
+  --accent: hsl(217, 100%, 56%);
   --muted-border: rgba(255, 255, 255, 0.12);
   --input-border: rgba(255, 255, 255, 0.8);
 }
@@ -13,7 +13,7 @@
   --bg: #ffffff;
   --text: rgba(0, 0, 0, 0.9);
   --muted-text: rgba(0, 0, 0, 0.75);
-  --accent: #F94892;
+  --accent: hsl(217, 100%, 56%);
   --muted-border: rgba(0, 0, 0, 0.08);
   --input-border: rgba(0, 0, 0, 0.65);
 }
@@ -27,6 +27,18 @@
   color: var(--muted-text);
   text-decoration: none;
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global hardware acceleration optimization */
+*,
+*::before,
+*::after {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
 }
 
 body {
@@ -46,6 +58,9 @@ body {
   overflow: hidden;
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
+  will-change: opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .spline-background.fade-in {
@@ -99,20 +114,23 @@ ul {
   font-size: 20px;
   border-radius: 10px;
   position: relative;
-  bottom: 0;
   margin-top: 50px;
-  transition: all 0.35s ease-out;
+  transition: transform 0.35s ease-out, background-color 0.35s ease-out, box-shadow 0.35s ease-out;
   background-color: transparent;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .btn:hover {
   background-color: var(--accent);
-  bottom: 12px;
+  transform: translate3d(0, 12px, 0);
   box-shadow: 0 0 20px 1px rgba(205, 106, 139, 0.25);
 }
 
 .btn:active {
   background-color: rgba(141, 33, 78, 0.9);
+  transform: translate3d(0, 12px, 0) scale(0.98);
 }
 
 @media screen and (max-width: 750px) {

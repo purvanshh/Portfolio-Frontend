@@ -9,6 +9,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ExternalLink, Github } from "lucide-react";
 import { cn } from "../../lib/utils";
+import ShineButton from "./ShineButton";
 import "./ScrollCarousel.css"; // Import CSS
 
 gsap.registerPlugin(ScrollTrigger);
@@ -152,16 +153,28 @@ const ScrollCarousel = forwardRef(
                                 </div>
                                 <div className="feature-actions">
                                     {feature.link && (
-                                        <a href={feature.link} target="_blank" rel="noreferrer" className="video-btn">
-                                            <Github size={18} />
+                                        <ShineButton
+                                            label="Code"
+                                            size="md"
+                                            bgColor="linear-gradient(325deg, hsl(217 100% 56%) 0%, hsl(194 100% 69%) 55%, hsl(217 100% 56%) 90%)"
+                                            className="project-action-btn"
+                                            onClick={() => window.open(feature.link, "_blank", "noopener,noreferrer")}
+                                        >
+                                            <Github size={18} style={{ marginRight: "0.5rem" }} />
                                             Code
-                                        </a>
+                                        </ShineButton>
                                     )}
                                     {feature.demoLink && (
-                                        <a href={feature.demoLink} target="_blank" rel="noreferrer" className="video-btn">
-                                            <ExternalLink size={18} />
+                                        <ShineButton
+                                            label="Live Demo"
+                                            size="md"
+                                            bgColor="linear-gradient(325deg, hsl(217 100% 56%) 0%, hsl(194 100% 69%) 55%, hsl(217 100% 56%) 90%)"
+                                            className="project-action-btn"
+                                            onClick={() => window.open(feature.demoLink, "_blank", "noopener,noreferrer")}
+                                        >
+                                            <ExternalLink size={18} style={{ marginRight: "0.5rem" }} />
                                             Live Demo
-                                        </a>
+                                        </ShineButton>
                                     )}
                                 </div>
                             </div>

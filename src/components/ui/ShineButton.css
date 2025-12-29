@@ -1,0 +1,51 @@
+ .shine-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  min-height: 44px;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: hsl(0 0% 100%);
+  background-size: 280% auto;
+  background-position: left center;
+  transition: background-position 0.8s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+  box-shadow:
+    0px 0px 20px rgba(71, 184, 255, 0.5),
+    0px 5px 5px -1px rgba(58, 125, 233, 0.25),
+    inset 4px 4px 8px rgba(175, 230, 255, 0.5),
+    inset -4px -4px 8px rgba(19, 95, 216, 0.35);
+  pointer-events: auto;
+  will-change: transform, background-position;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.shine-button:hover {
+  background-position: right top;
+  transform: translate3d(0, -1px, 0);
+}
+
+.shine-button:active {
+  transform: translate3d(0, 0, 0) scale(0.96);
+}
+
+.shine-button__label {
+  position: relative;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+/* Shine overlay removed for a cleaner look */
+.shine-button__shine {
+  display: none;
+}
+
+
+

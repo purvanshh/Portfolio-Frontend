@@ -45,6 +45,8 @@
     /* px-6 */
     padding-right: 1.5rem;
     will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 @media (min-width: 768px) {
@@ -73,7 +75,10 @@
     height: 100%;
     z-index: 10;
     position: relative;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
     /* For mobile: gap logic handled by parent flex gap */
 }
 
@@ -104,9 +109,12 @@
     align-items: center;
     justify-content: center;
     z-index: 10;
-    transition: all 0.3s;
+    transition: transform 0.3s ease, border-color 0.3s ease;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 
     /* Glassmorphism */
     background: rgba(255, 255, 255, 0.05);
@@ -126,7 +134,7 @@
 }
 
 .feature-card:hover .feature-card-inner {
-    transform: scale(1.02);
+    transform: translateZ(0) scale(1.02);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -135,9 +143,12 @@
     pointer-events: none;
     position: absolute;
     inset: 0;
-    transition: all 0.3s;
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
     border-radius: 1.5rem;
     background: transparent;
+    will-change: background, backdrop-filter;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .feature-card:hover .card-overlay {
@@ -155,10 +166,13 @@
     z-index: -1;
     border-radius: 1.5rem;
     transition: transform 0.5s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .feature-card:hover .feature-bg-img {
-    transform: scale(1.1);
+    transform: translateZ(0) scale(1.1);
 }
 
 /* Content */
@@ -170,7 +184,10 @@
     padding: 2.5rem;
     background: rgba(0, 0, 0, 0.6);
     /* Darker overlay for readability */
-    transition: background 0.3s;
+    transition: background 0.3s ease;
+    will-change: background;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .feature-card:hover .feature-content-wrapper {
@@ -233,7 +250,20 @@
 
 .video-btn:hover {
     background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-2px);
+    transform: translate3d(0, -2px, 0);
+}
+
+.project-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.project-action-btn .shine-button__label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* Progress Bar */

@@ -20,7 +20,7 @@
     font-size: 40px;
     font-weight: 600;
     margin-top: 18px;
-    color: #F94892;
+    color: hsl(217, 100%, 56%);
 }
 
 .profile-photo .img {
@@ -37,14 +37,14 @@
     padding-top: 75px;
     width: 120px;
     overflow-wrap: break-word;
-    color: #F94892;
+    color: hsl(217, 100%, 56%);
     text-transform: uppercase;
     z-index: 0;
     font-size: 100px;
     font-family: 'Intro', sans-serif;
     font-weight: 800;
     text-transform: uppercase;
-    background: -webkit-linear-gradient(-86deg, #ffe1a0 5%, #f67280 53%, #F94892 91%);
+    background: -webkit-linear-gradient(-86deg, hsl(194, 100%, 69%) 5%, hsl(217, 100%, 56%) 53%, hsl(194, 100%, 69%) 91%);
     -webkit-background-clip: text;
     -webkit-text-stroke: 4px transparent;
     background-clip: text;
@@ -74,15 +74,18 @@
 }
 
 .about-container .aboutMe-text .resume {
-    color: #F94892;
-    border-bottom: 2.5px solid #F94892;
-    transition: all 0.3s ease-in-out;
+    color: hsl(217, 100%, 56%);
+    border-bottom: 2.5px solid hsl(217, 100%, 56%);
+    transition: transform 0.3s ease-in-out;
     display: inline-block;
     font-weight: 800;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .about-container .aboutMe-text .resume:hover {
-    transform: scale(1.05);
+    transform: translateZ(0) scale(1.05);
 }
 
 @media screen and (max-width: 1150px) {

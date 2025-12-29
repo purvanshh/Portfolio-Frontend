@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
 import cartoon from '../images/Cartoon Background Removed.png';
+import ShineButton from './ui/ShineButton';
 
 export default function ContactForm({ id }) {
   const form = useRef();
@@ -52,7 +53,13 @@ export default function ContactForm({ id }) {
           <input id='name' type="text" name="name" placeholder='Full Name'  required/>
           <input id='email' type="email" name="email" placeholder='Email ID' required />
           <textarea id='message' name="message" rows='5' column='15' placeholder='Share your thoughts and insights here; your feedback means a lot.' required/>
-          <button className='btn' id='submitBtn' type="submit" value="Send" >Send Message</button>
+          <ShineButton 
+            label="Send Message" 
+            size="lg" 
+            type="submit"
+            bgColor="linear-gradient(325deg, hsl(217 100% 56%) 0%, hsl(194 100% 69%) 55%, hsl(217 100% 56%) 90%)" 
+            className="contact-submit-btn"
+          />
           <ToastContainer />
         </form>
         
