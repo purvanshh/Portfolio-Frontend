@@ -116,6 +116,13 @@ function App() {
               image: require("./images/Restaurant_landing.png")
             },
             {
+              title: "Content Creator Hub",
+              description: "Empower your creative journey with this sleek content creator platform. Built with a modern, intuitive interface, it features dynamic content management tools, seamless social media integration, and a vibrant aesthetic designed to inspire. Perfect for influencers and digital creators looking to elevate their online presence with style.",
+              link: "https://github.com/purvanshh/content-creator",
+              demoLink: "https://content-creator-sage.vercel.app/",
+              image: require("./images/SCR-20251229-szgm.jpeg")
+            },
+            {
               title: "Artisan Bakery",
               description: "Taste the craftsmanship with this modern artisan bakery site. Highlighting floating Three.js bread visuals and gooey text morphing effects, the design is as warm and inviting as fresh bread. The elegant aesthetic and smooth scrolling create a sensory digital experience that perfectly mirrors the artistry of baking.",
               link: "https://github.com/purvanshh/bakery-landing",
