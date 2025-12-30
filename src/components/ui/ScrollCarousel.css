@@ -120,12 +120,11 @@
     backface-visibility: hidden;
 
     /* Glassmorphism */
-    background: rgba(255, 255, 255, 0.05);
-    /* slightly visible bg */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
     color: white;
     overflow: hidden;
 }

@@ -22,12 +22,20 @@ export default function HomeBanner({ id }) {
               +<span>Developer</span>
             </li>
           </ul>
-          <ShineButton
-            label="Hire Me"
-            size="lg"
-            bgColor="linear-gradient(325deg, hsl(217 100% 56%) 0%, hsl(194 100% 69%) 55%, hsl(217 100% 56%) 90%)"
-            onClick={handleHireMeClick}
-          />
+          <div className="cta-buttons">
+            <ShineButton
+              label="Hire Me"
+              size="lg"
+              bgColor="linear-gradient(325deg, hsl(217 100% 56%) 0%, hsl(194 100% 69%) 55%, hsl(217 100% 56%) 90%)"
+              onClick={handleHireMeClick}
+            />
+            <ShineButton
+              label="ML Portfolio"
+              size="lg"
+              bgColor="linear-gradient(325deg, hsl(217 100% 56%) 0%, hsl(194 100% 69%) 55%, hsl(217 100% 56%) 90%)"
+              onClick={() => window.open("https://purvanshsahu.vercel.app", "_blank", "noopener,noreferrer")}
+            />
+          </div>
         </div>
       </div>
       <div className="mask">

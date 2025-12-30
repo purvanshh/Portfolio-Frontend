@@ -60,6 +60,15 @@
     line-height: 1.6;
     flex: 1 1 60%;
     max-width: 65ch;
+
+    /* Glass Effect */
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
 }
 
 .aboutMe-text span {

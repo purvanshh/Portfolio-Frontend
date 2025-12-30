@@ -7,8 +7,12 @@
     justify-content: space-between;
     padding: 20px 10px;
     padding-right: 0;
-    /* background: transparent; */
-    backdrop-filter: blur(3px);
+    /* Glass UI */
+    background: transparent;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 1px solid var(--glass-border);
+    transition: background 0.3s ease, padding 0.3s ease;
     z-index: 100;
 }
 

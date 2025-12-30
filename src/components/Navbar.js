@@ -71,14 +71,7 @@ export default function Navbar() {
             duration={30}
           >Contact</Link>
         </li>
-        <li>
-          <a
-            className="navLink"
-            href="https://purvanshsahu.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >ML Portfolio</a>
-        </li>
+
       </ul>
       <div className={click ? "social-links active" : "social-links"}>
         <a
