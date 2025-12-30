@@ -45,7 +45,9 @@
     /* px-6 */
     padding-right: 1.5rem;
     will-change: transform;
-    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
     backface-visibility: hidden;
 }
 
@@ -77,8 +79,9 @@
     position: relative;
     transition: transform 0.3s ease-in-out;
     will-change: transform;
-    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
+    perspective: 1000px;
     /* For mobile: gap logic handled by parent flex gap */
 }
 
@@ -119,8 +122,8 @@
     /* Glassmorphism */
     background: rgba(255, 255, 255, 0.05);
     /* slightly visible bg */
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.125);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     color: white;

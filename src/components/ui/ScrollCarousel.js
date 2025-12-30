@@ -50,7 +50,12 @@ const useFeatureAnimations = (
                 tl.fromTo(
                     scrollContainerRef.current,
                     { x: viewportOffset },
-                    { x: -finalOffset + viewportOffset, ease: "none", duration: 1 },
+                    {
+                        x: -finalOffset + viewportOffset,
+                        ease: "none",
+                        duration: 1,
+                        force3D: true // Force hardware acceleration
+                    },
                     0
                 ).to({}, { duration: 0.2 }); // Hold for a bit
 
