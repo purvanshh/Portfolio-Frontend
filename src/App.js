@@ -20,7 +20,7 @@ function App() {
     // Wait for 2.5 seconds before showing the site
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2500);
+    }, 3500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -49,7 +49,7 @@ function App() {
           fontSize: '0.9rem',
           letterSpacing: '1px'
         }}>
-          View in a desktop for the best experience
+          For the most fluid experience, I recommend viewing this project on a desktop device with battery saver disabled.
         </p>
       </div>
     );
