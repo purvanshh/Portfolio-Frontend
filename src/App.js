@@ -59,8 +59,8 @@ function App() {
     <>
       {/* Smokey Cursor Effect */}
       <SmokeyCursor
-        simulationResolution={128}
-        dyeResolution={1024}
+        simulationResolution={64}
+        dyeResolution={512}
         densityDissipation={3}
         velocityDissipation={2}
         curl={5}
