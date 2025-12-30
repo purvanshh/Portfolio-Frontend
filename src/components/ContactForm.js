@@ -9,7 +9,7 @@ import ShineButton from './ui/ShineButton';
 // ⚠️ IMPORTANT: Replace these with YOUR EmailJS credentials from https://dashboard.emailjs.com
 const EMAILJS_PUBLIC_KEY = '22Z-TjhaCZ7FS8IM7';  // Account → General → Public Key
 const EMAILJS_SERVICE_ID = 'service_ugvpczp';    // Email Services → Your service ID
-const EMAILJS_TEMPLATE_ID = 'template_pm73xds';  // Email Templates → Your template ID
+const EMAILJS_TEMPLATE_ID = 'template_kp26lvf';  // Email Templates → Your template ID
 
 export default function ContactForm({ id }) {
   const form = useRef();
