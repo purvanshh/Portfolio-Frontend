@@ -59,8 +59,15 @@ function App() {
     <>
       {/* Smokey Cursor Effect */}
       <SmokeyCursor
-        simulationResolution={64}
-        dyeResolution={512}
+        {...(() => {
+          // Dynamic quality adjustment based on device capabilities
+          const isHighEnd = typeof navigator !== 'undefined' &&
+            (navigator.hardwareConcurrency || 4) > 4;
+          return {
+            simulationResolution: isHighEnd ? 80 : 64,
+            dyeResolution: isHighEnd ? 640 : 512
+          };
+        })()}
         densityDissipation={3}
         velocityDissipation={2}
         curl={5}
