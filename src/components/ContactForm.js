@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import './ContactFormStyle.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -6,15 +6,25 @@ import emailjs from '@emailjs/browser';
 import cartoon from '../images/Cartoon Background Removed.png';
 import ShineButton from './ui/ShineButton';
 
+// ⚠️ IMPORTANT: Replace these with YOUR EmailJS credentials from https://dashboard.emailjs.com
+const EMAILJS_PUBLIC_KEY = '22Z-TjhaCZ7FS8IM7';  // Account → General → Public Key
+const EMAILJS_SERVICE_ID = 'service_ugvpczp';    // Email Services → Your service ID
+const EMAILJS_TEMPLATE_ID = 'template_lyzbf0p';  // Email Templates → Your template ID
+
 export default function ContactForm({ id }) {
   const form = useRef();
+
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_ugvpczp', 'template_lyzbf0p', form.current, '-8AsG2hlNcWfgWJFj')
+    emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form.current)
       .then((result) => {
-        console.log(result.text);
+        console.log('SUCCESS:', result.text);
         toast.success('Message sent successfully.', {
           position: "top-right",
           autoClose: 3000,
@@ -25,9 +35,12 @@ export default function ContactForm({ id }) {
           progress: undefined,
           theme: "dark",
         });
-      }, (error) => {
-        console.log(error.text);
-        toast.error("Failed to send message. Kindly refresh the page.", {
+        // Clear form after successful submission
+        form.current.reset();
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        toast.error("Failed to send message. Please try again.", {
           position: "top-right",
           autoClose: 3000,
           hideProgressBar: false,
