@@ -71,16 +71,28 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 16px;
-    transition: all 0.3s ease;
     cursor: default;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Hover Pop-out Effect */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+    will-change: transform, box-shadow;
+
+    /* Ensure interaction */
+    pointer-events: auto;
+    position: relative;
 }
 
 .skill-tile:hover {
-    background: var(--glass-shine);
-    border-color: rgba(255, 255, 255, 0.25);
-    transform: translateY(-5px);
-    box-shadow: var(--glass-shadow);
+    transform: translateY(-10px) scale(1.08);
+    box-shadow: 0 20px 40px rgba(32, 133, 226, 0.25),
+        0 0 30px rgba(32, 133, 226, 0.15);
+    border-color: rgba(32, 133, 226, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    z-index: 20;
 }
 
 /* Skill icon inside the tile */
