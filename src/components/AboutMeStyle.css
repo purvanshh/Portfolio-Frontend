@@ -1,19 +1,16 @@
 .about-container {
     display: flex;
+    flex-direction: column;
     position: relative;
-    margin: 80px 7vw 0 15vw;
-    padding-top: 20px;
-    align-items: flex-start;
-    gap: 2.5rem;
+    margin: 80px auto 0 auto;
+    padding: 20px 5vw 0 5vw;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
 }
 
 .profile-photo {
-    margin-left: 0;
-    height: fit-content;
-    padding: 0;
-    width: 200px;
-    /* fixed column for image */
-    flex-shrink: 0;
+    display: none;
 }
 
 .heading {
@@ -58,17 +55,18 @@
     color: var(--muted-text);
     height: fit-content;
     line-height: 1.6;
-    flex: 1 1 60%;
-    max-width: 65ch;
+    width: 100%;
+    max-width: 1000px;
 
     /* Glass Effect */
     background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
     border: 1px solid var(--glass-border);
-    padding: 2.5rem;
+    padding: 2.5rem 3.5rem;
     border-radius: 20px;
     box-shadow: var(--glass-shadow);
+    text-align: left;
 }
 
 .aboutMe-text span {

@@ -32,7 +32,7 @@
 
 .contact-wrapper-right {
     width: 50%;
-    padding-left: 30px;
+    padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,7 +79,8 @@ textarea:focus {
 
 .contact-submit-btn {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .contact-wrapper-right textarea {
