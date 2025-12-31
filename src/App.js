@@ -130,6 +130,13 @@ function App() {
               image: require("./images/SCR-20251229-szgm.jpeg")
             },
             {
+              title: "Kane Williams Lawyer",
+              description: "A sophisticated lawyer portfolio crafted with elegance and authority. Featuring a sleek dark theme with refined gold accents, smooth Framer Motion animations, and comprehensive sections including services, testimonials, FAQ, and blog. The professional typography and responsive design command trust while the modern aesthetic sets a new standard for legal web presence.",
+              link: "https://github.com/purvanshh/lawyer-landing",
+              demoLink: "https://lawyer-landing-gamma.vercel.app/",
+              image: require("./images/SCR-20251231-ubqm.png")
+            },
+            {
               title: "Artisan Bakery",
               description: "Taste the craftsmanship with this modern artisan bakery site. Highlighting floating Three.js bread visuals and gooey text morphing effects, the design is as warm and inviting as fresh bread. The elegant aesthetic and smooth scrolling create a sensory digital experience that perfectly mirrors the artistry of baking.",
               link: "https://github.com/purvanshh/bakery-landing",
