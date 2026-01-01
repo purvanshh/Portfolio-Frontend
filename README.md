@@ -2,7 +2,7 @@
 
 A high-performance, visually stunning portfolio showcasing modern web development expertise. Built with React and powered by cutting-edge animations, 3D graphics, and glassmorphic design.
 
-![Portfolio](https://purvansh-sahu.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-blue?style=for-the-badge)](https://purvansh-sahu.vercel.app/)
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)
 ![Three.js](https://img.shields.io/badge/Three.js-3D-black?style=for-the-badge&logo=three.js)
 
