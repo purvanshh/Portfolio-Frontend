@@ -2,13 +2,13 @@
 
 A high-performance, visually stunning portfolio showcasing modern web development expertise. Built with React and powered by cutting-edge animations, 3D graphics, and glassmorphic design.
 
-![Portfolio](https://img.shields.io/badge/Portfolio-Live-blue?style=for-the-badge)
+![Portfolio](https://purvansh-sahu.vercel.app/)
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)
 ![Three.js](https://img.shields.io/badge/Three.js-3D-black?style=for-the-badge&logo=three.js)
 
 ## 👨‍💻 About Me
 
-I'm a **pre-final year BSc Computer Science** student specializing in **AI & Machine Learning**. I blend technology with creativity to build immersive digital experiences—from interactive 3D web apps to fluid, animation-driven interfaces.
+I'm a **pre-final year Computer Science** student specializing in **AI & Machine Learning**. I blend technology with creativity to build immersive digital experiences—from interactive 3D web apps to fluid, animation-driven interfaces.
 
 ## 🛠 Tech Stack
 
@@ -88,9 +88,9 @@ Optimized for **Vercel** deployment with automatic CI/CD.
 
 ## 📬 Connect
 
-- **Portfolio**: [Live Site](https://purvansh.vercel.app)
+- **Portfolio**: [Live Site](https://purvansh-sahu.vercel.app)
 - **GitHub**: [@purvanshh](https://github.com/purvanshh)
-- **LinkedIn**: [Purvansh](https://linkedin.com/in/purvansh)
+- **LinkedIn**: [Purvansh](https://www.linkedin.com/in/purvansh-sahu-25b24228a/)
 
 ---
 
