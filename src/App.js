@@ -124,6 +124,13 @@ function App() {
           maxScrollHeight={6000}
           features={[
             {
+              title: "Dropset – Futuristic Gym",
+              description: "Step into the future of fitness with Dropset, a high-performance gym tracker landing page built for Gen Z athletes. Featuring stunning 3D floating dumbbells, assembling wireframe gyms, and animated neon grids powered by Three.js and React Three Fiber. The electric cyber theme with glowing gradients, glassmorphism cards, and Framer Motion + GSAP animations creates an immersive workout experience.",
+              link: "https://github.com/purvanshh/gym-landing",
+              demoLink: "https://gym-landing-sage.vercel.app",
+              image: require("./images/SCR-20260101-nxhh.jpeg")
+            },
+            {
               title: "Dental Wellness",
               description: "Experience a new standard in dental care with this premium landing page. Featuring a mesmerizing floating 3D tooth model, glassmorphism UI elements, and fluid GSAP-powered scroll animations, this site is designed to captivate. The refined teal–white color palette exudes professionalism, perfectly showcasing treatments, patient stories, and doctor profiles.",
               link: "https://github.com/purvanshh/dentist-landing",
