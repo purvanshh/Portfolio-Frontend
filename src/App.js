@@ -149,7 +149,7 @@ function App() {
               description: "Empower your creative journey with this sleek content creator platform. Built with a modern, intuitive interface, it features dynamic content management tools, seamless social media integration, and a vibrant aesthetic designed to inspire. Perfect for influencers and digital creators looking to elevate their online presence with style.",
               link: "https://github.com/purvanshh/content-creator",
               demoLink: "https://content-creator-sage.vercel.app/",
-              image: require("./images/SCR-20251229-szgm.jpeg")
+              image: require("./images/SCR-20260103-bhcf.jpeg")
             },
             {
               title: "Kane Williams Lawyer",
