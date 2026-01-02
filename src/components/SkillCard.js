@@ -66,8 +66,9 @@ export default function SkillCard({ id }) {
             <p className="skill-category-description">{category.description}</p>
             <div className="skill-tiles">
               {category.skills.map((skill, skillIndex) => (
-                <div className="skill-tile" key={skillIndex} title={skill.name}>
+                <div className="skill-tile" key={skillIndex}>
                   <skill.icon className="skill-icon" />
+                  <span className="skill-name">{skill.name}</span>
                 </div>
               ))}
             </div>

@@ -106,6 +106,28 @@
     color: white;
 }
 
+/* Skill name label - hidden by default, shown on hover */
+.skill-name {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.skill-tile:hover .skill-name {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
 /* Responsive adjustments - maintain 3 columns as much as possible */
 @media screen and (max-width: 900px) {
     .skill-container {

@@ -23,8 +23,12 @@ export default function Navbar() {
           duration={30}
         >
           <div className="logo-img">
-            <span className="blink">&lt;</span>
-            <span>&#47;</span>P<span className="blink">&gt;</span>
+            <span className="logo-default">
+              <span className="bracket-left blink">&lt;</span>
+              <span className="logo-content">&#47;P</span>
+              <span className="bracket-right blink">&gt;</span>
+            </span>
+            <span className="logo-hover">Home</span>
           </div>
         </Link>
       </div>

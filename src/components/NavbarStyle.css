@@ -26,11 +26,95 @@
     font-size: 50px;
     color: var(--text);
     font-weight: 600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.header .logo .logo-img span {
+/* Default logo state - brackets and content */
+.header .logo .logo-img .logo-default {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.header .logo .logo-img .logo-default span {
     font-weight: 600;
     color: #F94892;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
+
+/* The P and slash in the middle */
+.header .logo .logo-img .logo-default .logo-content {
+    color: var(--text);
+    /* Reverse: wait for Home to disappear first */
+    transition: opacity 0.4s ease 0.4s, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+}
+
+/* Left bracket < */
+.header .logo .logo-img .logo-default .bracket-left {
+    /* Reverse: wait for Home to disappear first */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.35s, opacity 0.4s ease 0.35s;
+}
+
+/* Right bracket > */
+.header .logo .logo-img .logo-default .bracket-right {
+    /* Reverse: wait for Home to disappear first */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.35s, opacity 0.4s ease 0.35s;
+}
+
+/* Hover text - vertical "Home" */
+.header .logo .logo-img .logo-hover {
+    position: absolute;
+    opacity: 0;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg) translateY(20px);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+    -webkit-text-fill-color: white;
+    /* Reverse: fade out immediately */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+/* === HOVER EFFECTS === */
+
+/* Hide the P/slash content first */
+.header .logo:hover .logo-img .logo-default .logo-content {
+    opacity: 0;
+    transform: scale(0.3);
+    /* Forward: disappear quickly */
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Brackets come together */
+.header .logo:hover .logo-img .logo-default .bracket-left {
+    transform: translateX(18px);
+    opacity: 0;
+    /* Forward: slide and fade with slight delay */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, opacity 0.3s ease 0.4s;
+}
+
+.header .logo:hover .logo-img .logo-default .bracket-right {
+    transform: translateX(-18px);
+    opacity: 0;
+    /* Forward: slide and fade with slight delay */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, opacity 0.3s ease 0.4s;
+}
+
+/* Reveal Home vertically with slide up */
+.header .logo:hover .logo-img .logo-hover {
+    opacity: 1;
+    transform: rotate(180deg) translateY(0);
+    /* Forward: appear after brackets collapse */
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.4s,
+        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
 }
 
 .header .logo .logo-img .blink {
