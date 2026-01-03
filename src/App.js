@@ -124,6 +124,13 @@ function App() {
           maxScrollHeight={6000}
           features={[
             {
+              title: "TravelPlanner – Immersive Travel",
+              description: "A modern, immersive travel planning website featuring stunning parallax mountain backgrounds with 17 layered images, custom cursor with spring physics and trail effects, and scroll-expanding hero video. Built with Next.js 16, TypeScript, Tailwind CSS, and Framer Motion, it delivers pop-out hover effects, dynamic navbar with animated sliding pill, and expand-on-hover destination cards for an unforgettable user experience.",
+              link: "https://github.com/purvanshh/travel-planner",
+              demoLink: "https://travel-planner-rho-three.vercel.app/",
+              image: require("./images/image copy.png")
+            },
+            {
               title: "Dropset – Futuristic Gym",
               description: "Step into the future of fitness with Dropset, a high-performance gym tracker landing page built for Gen Z athletes. Featuring stunning 3D floating dumbbells, assembling wireframe gyms, and animated neon grids powered by Three.js and React Three Fiber. The electric cyber theme with glowing gradients, glassmorphism cards, and Framer Motion + GSAP animations creates an immersive workout experience.",
               link: "https://github.com/purvanshh/gym-landing",
