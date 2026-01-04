@@ -40,7 +40,7 @@
     gap: 2rem;
     /* gap-8 */
     align-items: center;
-    height: 100%;
+    height: auto;
     padding-left: 1.5rem;
     /* px-6 */
     padding-right: 1.5rem;
@@ -56,6 +56,7 @@
         flex-direction: row;
         padding: 0;
         width: max-content;
+        height: 100%;
         /* Important for horizontal scrolling */
     }
 }
@@ -74,7 +75,8 @@
 .feature-card {
     flex-shrink: 0;
     width: 100%;
-    height: 100%;
+    height: 500px;
+    /* Fixed height to ensure inner 100% works */
     z-index: 10;
     position: relative;
     transition: transform 0.3s ease-in-out;
@@ -82,7 +84,6 @@
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
-    /* For mobile: gap logic handled by parent flex gap */
 }
 
 @media (min-width: 768px) {
@@ -98,6 +99,7 @@
     .feature-card {
         width: 80vw;
         max-width: 600px;
+        height: 100%;
     }
 }
 

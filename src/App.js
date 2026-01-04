@@ -66,7 +66,7 @@ function App() {
           fontSize: '0.9rem',
           letterSpacing: '1px'
         }}>
-          For the most fluid experience, I recommend viewing this project on a desktop device with battery saver disabled.
+          Best viewed on a desktop device with battery saver disabled.
         </p>
       </div>
     );
