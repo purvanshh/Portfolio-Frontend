@@ -8,7 +8,7 @@ export default function Footer() {
   }
   return (
     <div className='footer'>
-        Made with ❤ by Purvansh <span style={styleSymbol}>©</span> 2025
+        Made with ❤️ by Purvansh <span style={styleSymbol}>©</span> 2026
     </div>
   )
 }
