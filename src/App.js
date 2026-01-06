@@ -152,6 +152,13 @@ function App() {
             maxScrollHeight={6000}
             features={[
               {
+                title: "Personal Portfolio Template",
+                description: "A classic personal portfolio template built with pure HTML and CSS. Designed for simplicity and performance, this template offers a fully responsive layout to showcase projects and skills. It features a clean aesthetic, easy customization, and structured code perfect for developers who prefer a lightweight, dependency-free solution.",
+                link: "https://github.com/purvanshh/Purvansh-html",
+                demoLink: "https://purvansh-html.vercel.app",
+                image: require("./images/image copy 2.png")
+              },
+              {
                 title: "TravelPlanner – Immersive Travel",
                 description: "A modern, immersive travel planning website featuring stunning parallax mountain backgrounds with 17 layered images, custom cursor with spring physics and trail effects, and scroll-expanding hero video. Built with Next.js 16, TypeScript, Tailwind CSS, and Framer Motion, it delivers pop-out hover effects, dynamic navbar with animated sliding pill, and expand-on-hover destination cards for an unforgettable user experience.",
                 link: "https://github.com/purvanshh/travel-planner",
