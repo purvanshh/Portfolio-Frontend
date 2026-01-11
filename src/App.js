@@ -5,6 +5,7 @@ import HomeBanner from "./components/HomeBanner";
 import AboutMe from "./components/AboutMe";
 import RippleLoader from "./components/ui/RippleLoader";
 import { FaReact } from "react-icons/fa";
+import useMobileRedirect from "./hooks/useMobileRedirect";
 
 // Lazy load heavy components
 const SkillCard = lazy(() => import("./components/SkillCard"));
@@ -15,7 +16,9 @@ const SplineErrorBoundary = lazy(() => import("./components/SplineErrorBoundary"
 const SmokeyCursor = lazy(() => import("./components/ui/SmokeyCursor"));
 const ScrollCarousel = lazy(() => import("./components/ui/ScrollCarousel"));
 
+
 function App() {
+  useMobileRedirect();
   const [isLoading, setIsLoading] = useState(true);
   const [isLowPowerDevice, setIsLowPowerDevice] = useState(false);
 
