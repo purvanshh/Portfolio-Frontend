@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://purvansh-html.vercel.app/sitemap.xml

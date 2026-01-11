@@ -143,7 +143,7 @@ function App() {
       </Suspense>
 
       {/* Main Content */}
-      <div className="main-content">
+      <main className="main-content">
         <Navbar />
         <HomeBanner id="home" />
 
@@ -240,7 +240,7 @@ function App() {
         <Suspense fallback={<div style={{ height: '100px' }} />}>
           <Footer />
         </Suspense>
-      </div>
+      </main>
     </>
   );
 }
