@@ -63,12 +63,9 @@ export default function ScrollPlanes({ projects = [], id, loops = 1 }) {
     // slightly reduced fade distances to ensure the loop is seamless with only 2 sets
     const fadeStart = 1500;
     const fadeEnd = 2400;
-    const baseWaveHeight = 180;
-    const velocityMultiplier = 12;
+    const baseWaveHeight = 200;
+    const velocityMultiplier = 15;
 
-    // --- FIX: FORCE EXACTLY 2 COPIES ---
-    // Instead of calculating based on width, we just create two sets.
-    // This gives you the "Infinity Scroll" effect: Original Set + Buffer Set
     const displayProjects = useMemo(() => {
         if (projects.length === 0) return [];
         return [...projects, ...projects];
@@ -82,7 +79,7 @@ export default function ScrollPlanes({ projects = [], id, loops = 1 }) {
         velocity: 0,
     });
 
-    const updateCards = useCallback((progress) => {
+    const updateCards = useCallback((progress, enableTransition = false) => {
         const totalScrollDistance = totalWidth * loops;
         const currentScroll = progress * totalScrollDistance;
 
@@ -94,6 +91,14 @@ export default function ScrollPlanes({ projects = [], id, loops = 1 }) {
 
         planesRef.current.forEach((plane, index) => {
             if (!plane) return;
+
+            // --- TRANSITION CONTROL ---
+            // Only use smooth CSS transitions when popping out/in, otherwise use instant updates for scrolling
+            if (enableTransition) {
+                plane.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease, filter 0.4s ease';
+            } else {
+                plane.style.transition = 'none';
+            }
 
             let offset = index * spacing - currentScroll;
 
@@ -107,7 +112,7 @@ export default function ScrollPlanes({ projects = [], id, loops = 1 }) {
             let z = offset * Math.sin(baseAngle);
             let y = -offset * 0.17;
 
-            let targetRotateY = -50;
+            let targetRotateY = -30;
 
             // --- WAVE ---
             const sigma = 700;
@@ -172,12 +177,12 @@ export default function ScrollPlanes({ projects = [], id, loops = 1 }) {
                 scrub: 1,
                 onUpdate: (self) => {
                     scrollProgressRef.current = self.progress;
-                    updateCards(self.progress);
+                    updateCards(self.progress, false); // No transition during scroll
                 },
             });
         }, containerRef);
 
-        updateCards(0);
+        updateCards(0, false); // Initial state
 
         return () => {
             ctx.revert();
@@ -188,7 +193,7 @@ export default function ScrollPlanes({ projects = [], id, loops = 1 }) {
 
     useEffect(() => {
         activeImageRef.current = activeImage;
-        updateCards(scrollProgressRef.current);
+        updateCards(scrollProgressRef.current, true); // Enable transition for state changes
 
         if (activeImage !== null) {
             document.body.classList.add('project-overlay-active');
