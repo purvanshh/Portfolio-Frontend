@@ -63,7 +63,9 @@ export default function SmokeyCursor({
             TRANSPARENT: transparent,
         };
 
-        const { gl, ext } = getWebGLContext(canvas);
+        const context = getWebGLContext(canvas);
+        if (!context) return;
+        const { gl, ext } = context;
         if (!gl || !ext) return;
 
         if (!ext.supportLinearFiltering) {
@@ -87,7 +89,8 @@ export default function SmokeyCursor({
             }
 
             if (!gl) {
-                throw new Error("Unable to initialize WebGL.");
+                console.warn("Unable to initialize WebGL.");
+                return null;
             }
 
             const isWebGL2 = "drawBuffers" in gl;
