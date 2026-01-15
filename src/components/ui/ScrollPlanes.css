@@ -54,6 +54,7 @@
 }
 
 /* Scroll Indicator */
+/* Scroll Indicator */
 .scroll-planes-indicator {
     position: absolute;
     z-index: 50;
@@ -63,11 +64,25 @@
     text-transform: uppercase;
     pointer-events: none;
     transition: opacity 0.5s ease;
-    bottom: 3vw;
-    right: 3vw;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 10px;
-    letter-spacing: 0.05em;
-    color: white;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.6);
+    animation: pulse-opacity 2s infinite ease-in-out;
+}
+
+@keyframes pulse-opacity {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
 }
 
 /* 3D Perspective Container */

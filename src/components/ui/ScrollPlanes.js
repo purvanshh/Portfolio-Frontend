@@ -238,6 +238,10 @@ export default function ScrollPlanes({ projects = [], id, loops = 1 }) {
                 </div>
             </div>
 
+            <div className={`scroll-planes-indicator ${activeImage !== null ? 'scroll-planes-hidden' : ''}`}>
+                CLICK ON CARD TO VIEW DETAILS
+            </div>
+
             <div className="scroll-planes-perspective">
                 <div className="scroll-planes-3d-wrapper">
                     {displayProjects.map((item, index) => {
