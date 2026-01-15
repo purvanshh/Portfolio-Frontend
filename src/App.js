@@ -14,7 +14,7 @@ const Footer = lazy(() => import("./components/Footer"));
 const AnimatedCursor = lazy(() => import("react-animated-cursor"));
 const SplineErrorBoundary = lazy(() => import("./components/SplineErrorBoundary"));
 const SmokeyCursor = lazy(() => import("./components/ui/SmokeyCursor"));
-const ScrollCarousel = lazy(() => import("./components/ui/ScrollCarousel"));
+const ScrollPlanes = lazy(() => import("./components/ui/ScrollPlanes"));
 
 
 function App() {
@@ -150,10 +150,9 @@ function App() {
         {/* ================= PROJECTS ================= */}
 
         <Suspense fallback={<div style={{ height: '500px' }} />}>
-          <ScrollCarousel
+          <ScrollPlanes
             id="project"
-            maxScrollHeight={6000}
-            features={[
+            projects={[
               {
                 title: "Personal Portfolio Template",
                 description: "A classic personal portfolio template built with pure HTML and CSS. Designed for simplicity and performance, this template offers a fully responsive layout to showcase projects and skills. It features a clean aesthetic, easy customization, and structured code perfect for developers who prefer a lightweight, dependency-free solution.",

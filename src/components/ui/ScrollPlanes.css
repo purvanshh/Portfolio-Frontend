@@ -1,0 +1,332 @@
+/* ScrollPlanes 3D Gallery Styles */
+
+.scroll-planes-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: transparent;
+    touch-action: none;
+    position: relative;
+}
+
+/* Title - positioned to avoid navbar overlap */
+.scroll-planes-title {
+    position: absolute;
+    z-index: 50;
+    font-family: 'Poppins', sans-serif;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    top: 3vw;
+    left: 8vw;
+    /* Shifted right to avoid navbar blur */
+}
+
+.scroll-planes-hidden {
+    opacity: 0;
+}
+
+.scroll-planes-title-line1 {
+    color: white;
+    line-height: 0.9;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    font-size: clamp(32px, 5vw, 64px);
+    margin-left: 4vw;
+}
+
+.scroll-planes-title-line2 {
+    color: white;
+    line-height: 0.9;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    font-size: clamp(32px, 5vw, 64px);
+}
+
+.scroll-planes-title-sup {
+    font-size: clamp(10px, 0.4em, 0.4em);
+    font-weight: 600;
+    letter-spacing: normal;
+    font-feature-settings: "tnum";
+    margin-left: 4px;
+    position: relative;
+    top: 0.65em;
+    vertical-align: top;
+}
+
+/* Scroll Indicator */
+.scroll-planes-indicator {
+    position: absolute;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    bottom: 3vw;
+    right: 3vw;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    color: white;
+}
+
+/* 3D Perspective Container */
+.scroll-planes-perspective {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+    perspective-origin: 50% 50%;
+}
+
+.scroll-planes-3d-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+/* Individual Card */
+.scroll-planes-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 400px;
+    height: 520px;
+    transform-style: preserve-3d;
+    will-change: transform, opacity, filter;
+}
+
+.scroll-planes-card-inner {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #1f2937;
+    transition: all 0.3s ease;
+}
+
+.scroll-planes-card:hover .scroll-planes-card-inner {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.scroll-planes-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.scroll-planes-card-img-hovered {
+    transform: scale(1.1);
+    opacity: 0.4;
+}
+
+/* Card Label with Matrix Text - now at bottom of card */
+.scroll-planes-card-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6), transparent);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.scroll-planes-card-label-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-planes-card-label-text {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: white;
+    text-align: center;
+}
+
+.scroll-planes-matrix-text {
+    font-family: monospace;
+    letter-spacing: 0.1em;
+}
+
+/* Card Index */
+.scroll-planes-card-index {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s ease;
+    top: -32px;
+    left: 0px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+}
+
+.scroll-planes-card:hover .scroll-planes-card-index {
+    color: white;
+}
+
+/* Overlay */
+.scroll-planes-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.scroll-planes-overlay-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: auto;
+}
+
+.scroll-planes-overlay-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5), transparent);
+    pointer-events: none;
+    animation: slideUp 0.7s ease 0.1s backwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-planes-overlay-title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.05em;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.scroll-planes-overlay-desc {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 800px;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.scroll-planes-overlay-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: monospace;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+    animation: slideUp 0.7s ease 0.2s backwards;
+}
+
+.scroll-planes-overlay-divider {
+    width: 2rem;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.scroll-planes-overlay-actions {
+    display: flex;
+    gap: 1rem;
+    pointer-events: auto;
+    animation: slideUp 0.7s ease 0.3s backwards;
+}
+
+.scroll-planes-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 200;
+    transition: color 0.2s ease, transform 0.2s ease;
+    padding: 0.5rem;
+}
+
+.scroll-planes-close-btn:hover {
+    color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .scroll-planes-card {
+        width: 280px;
+        height: 360px;
+    }
+
+    .scroll-planes-title-line1,
+    .scroll-planes-title-line2 {
+        font-size: clamp(24px, 6vw, 40px);
+    }
+
+    .scroll-planes-overlay-content {
+        padding: 1.5rem;
+    }
+
+    .scroll-planes-overlay-title {
+        font-size: clamp(1.5rem, 8vw, 2.5rem);
+    }
+
+    .scroll-planes-overlay-desc {
+        font-size: 0.875rem;
+    }
+
+    .scroll-planes-card-label {
+        padding: 1rem 0.75rem;
+    }
+
+    .scroll-planes-card-label-text {
+        font-size: 0.75rem;
+    }
+}
