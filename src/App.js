@@ -20,22 +20,31 @@ const ScrollPlanes = lazy(() => import("./components/ui/ScrollPlanes"));
 function App() {
   useMobileRedirect();
   const [isLoading, setIsLoading] = useState(true);
-  const [isLowPowerDevice, setIsLowPowerDevice] = useState(false);
+  const [performanceTier, setPerformanceTier] = useState('high'); // 'high', 'medium', 'low'
 
   useEffect(() => {
-    // Check for low-end devices
-    const checkLowPower = () => {
+    // Check for device capabilities
+    const checkPerformance = () => {
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
       const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
+      // Default to 4 if unknown, which puts it in 'medium' tier safely
       const coreCount = navigator.hardwareConcurrency || 4;
 
-      // Consider it low power if it's mobile, small screen, or has few cores
+      // Tier 3: Low Performance (Mobile or very weak hardware)
       if (isMobile || isSmallScreen || coreCount < 4) {
-        setIsLowPowerDevice(true);
+        setPerformanceTier('low');
+      }
+      // Tier 2: Medium Performance (Average laptops, dual-core with hyperthreading, etc.)
+      else if (coreCount <= 6) {
+        setPerformanceTier('medium');
+      }
+      // Tier 1: High Performance (Gaming rigs, powerful work laptops)
+      else {
+        setPerformanceTier('high');
       }
     };
 
-    checkLowPower();
+    checkPerformance();
 
     // Wait for 2.5 seconds before showing the site
     const timer = setTimeout(() => {
@@ -69,7 +78,7 @@ function App() {
           fontSize: '0.9rem',
           letterSpacing: '1px'
         }}>
-          Best viewed on a desktop device with battery saver disabled.
+          Optimizing experience for your device...
         </p>
       </div>
     );
@@ -78,18 +87,12 @@ function App() {
   return (
     <>
       <Suspense fallback={null}>
-        {/* Smokey Cursor Effect - Disabled on low power devices */}
-        {!isLowPowerDevice && (
+        {/* Smokey Cursor Effect - Adaptive Quality */}
+        {performanceTier !== 'low' && (
           <SmokeyCursor
-            {...(() => {
-              // Dynamic quality adjustment based on device capabilities
-              const isHighEnd = typeof navigator !== 'undefined' &&
-                (navigator.hardwareConcurrency || 4) > 4;
-              return {
-                simulationResolution: isHighEnd ? 80 : 64,
-                dyeResolution: isHighEnd ? 640 : 512
-              };
-            })()}
+            simulationResolution={performanceTier === 'high' ? 128 : 64}
+            dyeResolution={performanceTier === 'high' ? 1024 : 512}
+            captureResolution={performanceTier === 'high' ? 512 : 256}
             densityDissipation={3}
             velocityDissipation={2}
             curl={5}
@@ -103,7 +106,7 @@ function App() {
 
       <Suspense fallback={null}>
         {/* 3D Background - Disabled on low power devices */}
-        {!isLowPowerDevice && (
+        {performanceTier !== 'low' && (
           <SplineErrorBoundary>
             <div className="spline-background fade-in" style={{ opacity: 1 }}>
               <spline-viewer url="https://prod.spline.design/c1CILr5VqKGYhoDt/scene.splinecode" />

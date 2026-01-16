@@ -7,47 +7,33 @@ import './ScrollPlanes.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&';
 
-function MatrixText({ text, active }) {
-    const [displayText, setDisplayText] = useState(text);
-    const intervalRef = useRef(null);
 
-    useEffect(() => {
-        if (!active) {
-            setDisplayText(text);
-            return;
-        }
+function MosaicText({ text, active }) {
+    return (
+        <span style={{ display: 'inline-flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2px' }}>
+            {text.split('').map((char, index) => {
+                // Pseudo-random delay based on index for stable randomness
+                const delay = active ? ((index * 7 + 3) % 20) * 0.03 : 0;
 
-        let iteration = 0;
-        if (intervalRef.current) clearInterval(intervalRef.current);
-
-        intervalRef.current = setInterval(() => {
-            setDisplayText(
-                text
-                    .split('')
-                    .map((letter, index) => {
-                        if (index < iteration) {
-                            return text[index];
-                        }
-                        return CHARS[Math.floor(Math.random() * CHARS.length)];
-                    })
-                    .join('')
-            );
-
-            if (iteration >= text.length) {
-                if (intervalRef.current) clearInterval(intervalRef.current);
-            }
-
-            iteration += 1 / 2;
-        }, 30);
-
-        return () => {
-            if (intervalRef.current) clearInterval(intervalRef.current);
-        };
-    }, [active, text]);
-
-    return <span className="scroll-planes-matrix-text">{displayText}</span>;
+                return (
+                    <span
+                        key={index}
+                        style={{
+                            opacity: active ? 1 : 0,
+                            transform: active ? 'scale(1) translateY(0)' : 'scale(0.5) translateY(10px)',
+                            filter: active ? 'blur(0px)' : 'blur(8px)',
+                            transition: `all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) ${delay}s`,
+                            display: 'inline-block',
+                            minWidth: char === ' ' ? '0.3em' : 'auto'
+                        }}
+                    >
+                        {char === ' ' ? '\u00A0' : char}
+                    </span>
+                );
+            })}
+        </span>
+    );
 }
 
 export default function ScrollPlanes({ projects = [], id, loops = 0.6 }) {
@@ -265,7 +251,7 @@ export default function ScrollPlanes({ projects = [], id, loops = 0.6 }) {
                                     />
                                     <div className={`scroll-planes-card-label ${hoveredIndex === index && activeImage === null ? 'scroll-planes-card-label-visible' : ''}`}>
                                         <div className="scroll-planes-card-label-text">
-                                            <MatrixText text={item.title.toUpperCase()} active={hoveredIndex === index} />
+                                            <MosaicText text={item.title.toUpperCase()} active={hoveredIndex === index} />
                                         </div>
                                     </div>
                                 </div>
