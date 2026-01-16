@@ -50,7 +50,7 @@ function MatrixText({ text, active }) {
     return <span className="scroll-planes-matrix-text">{displayText}</span>;
 }
 
-export default function ScrollPlanes({ projects = [], id, loops = 1 }) {
+export default function ScrollPlanes({ projects = [], id, loops = 0.6 }) {
     const containerRef = useRef(null);
     const planesRef = useRef([]);
     const [hoveredIndex, setHoveredIndex] = useState(null);
