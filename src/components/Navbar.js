@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import "./NavbarStyle.css";
 import { Link } from "react-scroll";
 import {
@@ -8,7 +8,7 @@ import {
   FaTimes,
 } from "react-icons/fa";
 
-export default function Navbar() {
+const Navbar = () => {
   const [click, setClick] = useState(false);
   const handleCLick = () => setClick(!click);
 
@@ -111,4 +111,6 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
+};
+
+export default memo(Navbar);

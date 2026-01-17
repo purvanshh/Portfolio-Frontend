@@ -3,6 +3,7 @@ import { Github, ExternalLink, X } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ShineButton from './ShineButton';
+import { projects as defaultProjects } from '../../lib/projects';
 import './ScrollPlanes.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -36,7 +37,7 @@ function MosaicText({ text, active }) {
     );
 }
 
-export default function ScrollPlanes({ projects = [], id, loops = 0.6 }) {
+export default function ScrollPlanes({ projects = defaultProjects, id, loops = 0.6 }) {
     const containerRef = useRef(null);
     const planesRef = useRef([]);
     const [hoveredIndex, setHoveredIndex] = useState(null);
