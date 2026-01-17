@@ -1,6 +1,6 @@
 import "./HomeBannerStyle.css";
 import ShineButton from "./ui/ShineButton";
-// import cartoon from "../images/AnimeBack.png";
+
 
 export default function HomeBanner({ id }) {
   const handleHireMeClick = () => {
