@@ -2,13 +2,13 @@ import { useState, useEffect, lazy, Suspense } from "react";
 import "./index.css";
 import Navbar from "./components/Navbar";
 import HomeBanner from "./components/HomeBanner";
-const AboutMe = lazy(() => import("./components/AboutMe"));
 import RippleLoader from "./components/ui/RippleLoader";
 import { FaReact } from "react-icons/fa";
 import { projects } from './lib/projects';
 import useMobileRedirect from "./hooks/useMobileRedirect";
 
 // Lazy load heavy components
+const AboutMe = lazy(() => import("./components/AboutMe"));
 const SkillCard = lazy(() => import("./components/SkillCard"));
 const ContactForm = lazy(() => import("./components/ContactForm"));
 const Footer = lazy(() => import("./components/Footer"));
