@@ -44,6 +44,7 @@ const Navbar = () => {
             spy={true}
             smooth={true}
             duration={30}
+            onMouseEnter={() => import("./ui/ScrollPlanes")}
           >Projects</Link>
         </li>
         <li>
@@ -54,6 +55,7 @@ const Navbar = () => {
             spy={true}
             smooth={true}
             duration={30}
+            onMouseEnter={() => import("./AboutMe")}
           >About</Link>
         </li>
         <li>
@@ -63,7 +65,9 @@ const Navbar = () => {
             to="skills"
             spy={true}
             smooth={true}
-            duration={30}>Skills</Link>
+            duration={30}
+            onMouseEnter={() => import("./SkillCard")}
+          >Skills</Link>
         </li>
         <li>
           <Link
@@ -73,6 +77,7 @@ const Navbar = () => {
             spy={true}
             smooth={true}
             duration={30}
+            onMouseEnter={() => import("./ContactForm")}
           >Contact</Link>
         </li>
 
