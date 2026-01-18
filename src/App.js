@@ -154,31 +154,29 @@ function App() {
         {/* ================= PROJECTS ================= */}
 
         {/* Defer loading entirely until near viewport */}
-        <LazyRender rootMargin="400px" fallback={<div style={{ height: '800px' }} />}>
+        <LazyRender id="project" rootMargin="400px" fallback={<div style={{ height: '800px' }} />}>
           <Suspense fallback={<div style={{ height: '800px' }} />}>
-            <ScrollPlanes
-              id="project"
-            />
+            <ScrollPlanes />
           </Suspense>
         </LazyRender>
 
         {/* ================= SECTIONS ================= */}
 
-        <LazyRender rootMargin="200px" fallback={<div style={{ height: '400px' }} />}>
+        <LazyRender id="about" rootMargin="200px" fallback={<div style={{ height: '400px' }} />}>
           <Suspense fallback={<div style={{ height: '400px' }} />}>
-            <AboutMe id="about" />
+            <AboutMe />
           </Suspense>
         </LazyRender>
 
-        <LazyRender rootMargin="200px" fallback={<div style={{ height: '400px' }} />}>
+        <LazyRender id="skills" rootMargin="200px" fallback={<div style={{ height: '400px' }} />}>
           <Suspense fallback={<div style={{ height: '400px' }} />}>
-            <SkillCard id="skills" />
+            <SkillCard />
           </Suspense>
         </LazyRender>
 
-        <LazyRender rootMargin="200px" fallback={<div style={{ height: '400px' }} />}>
+        <LazyRender id="contact" rootMargin="200px" fallback={<div style={{ height: '400px' }} />}>
           <Suspense fallback={<div style={{ height: '400px' }} />}>
-            <ContactForm id="contact" />
+            <ContactForm />
           </Suspense>
         </LazyRender>
 

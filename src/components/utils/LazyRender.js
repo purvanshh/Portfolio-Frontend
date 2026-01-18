@@ -17,7 +17,8 @@ const LazyRender = ({
     children,
     rootMargin = '200px',
     threshold = 0.0,
-    fallback = null
+    fallback = null,
+    ...props
 }) => {
     const [isVisible, setIsVisible] = useState(false);
     const containerRef = useRef(null);
@@ -52,7 +53,7 @@ const LazyRender = ({
     }, [rootMargin, threshold]);
 
     return (
-        <div ref={containerRef} style={{ minHeight: '10px' }}>
+        <div ref={containerRef} style={{ minHeight: '10px' }} {...props}>
             {isVisible ? children : fallback}
         </div>
     );
