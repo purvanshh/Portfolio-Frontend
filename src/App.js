@@ -3,6 +3,7 @@ import "./index.css";
 import Navbar from "./components/Navbar";
 import HomeBanner from "./components/HomeBanner";
 import RippleLoader from "./components/ui/RippleLoader";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { FaReact } from "react-icons/fa";
 import useMobileRedirect from "./hooks/useMobileRedirect";
 import LazyRender from "./components/utils/LazyRender";
@@ -187,6 +188,7 @@ function App() {
           </Suspense>
         </LazyRender>
       </main>
+      <SpeedInsights />
     </>
   );
 }
