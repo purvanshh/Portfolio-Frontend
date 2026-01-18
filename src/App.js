@@ -125,7 +125,7 @@ function App() {
         {/* Custom Cursor - Gated by Interaction */}
         {hasInteracted && (
           <AnimatedCursor
-            color="#F94892"
+            color="#5984d4ff"
             innerSize={8}
             outerSize={0}
             innerScale={1.2}
@@ -133,7 +133,7 @@ function App() {
             outerAlpha={0}
             hasBlendMode={false}
             innerStyle={{
-              backgroundColor: "#F94892",
+              backgroundColor: "#5984d4ff",
               zIndex: 99999,
             }}
             clickables={[
