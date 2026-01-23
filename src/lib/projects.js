@@ -1,5 +1,12 @@
 export const projects = [
   {
+    title: "Formula 1 Experience",
+    description: "A cinematic, interactive scrollytelling experience showcasing the engineering and speed of a Formula 1 car. Built with Next.js 14, WebGL concepts (Canvas API), and Framer Motion. Features a smooth 181-frame image sequence, responsive hero banner, and dynamic narrative elements.",
+    link: "https://github.com/purvanshh/porsche-scroll",
+    demoLink: "https://porsche-ten-pi.vercel.app/",
+    image: require("../images/SCR 2026-01-23.webp")
+  },
+  {
     title: "Personal Portfolio Template",
     description: "A classic personal portfolio template built with pure HTML and CSS. Designed for simplicity and performance, this template offers a fully responsive layout to showcase projects and skills. It features a clean aesthetic, easy customization, and structured code perfect for developers who prefer a lightweight, dependency-free solution.",
     link: "https://github.com/purvanshh/Purvansh-html",
