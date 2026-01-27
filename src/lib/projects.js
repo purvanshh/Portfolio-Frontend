@@ -1,5 +1,12 @@
 export const projects = [
   {
+    title: "Cafe Scroll - Brussels Brewery",
+    description: "A modern, interactive coffee shop website built with Next.js 15, featuring stunning scroll-based animations and immersive visual storytelling.",
+    link: "https://github.com/purvanshh/cafe-scroll",
+    demoLink: "https://cafe-landing-mauve.vercel.app/",
+    image: require("../images/cafe-scroll.webp")
+  },
+  {
     title: "Formula 1 Experience",
     description: "A cinematic, interactive scrollytelling experience showcasing the engineering and speed of a Formula 1 car. Built with Next.js 14, WebGL concepts (Canvas API), and Framer Motion. Features a smooth 181-frame image sequence, responsive hero banner, and dynamic narrative elements.",
     link: "https://github.com/purvanshh/porsche-scroll",
